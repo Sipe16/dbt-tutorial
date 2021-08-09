@@ -1,6 +1,6 @@
 jobs:
   - name: daytime
-    schedule: 0 12 * * *
+    schedule: 0 16:28 * * *
     steps:
       - name: run models
         command: dbt run
