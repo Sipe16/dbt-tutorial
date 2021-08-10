@@ -3,9 +3,10 @@ version: 2
 
 models:
     - name: player
-      description: "A starter dbt model"
+      description: "A starter dbt model_2"
       columns:
           - name: first_name
             description: "The primary key for this table"
             tests:
-                - null
+                - not_null
+
