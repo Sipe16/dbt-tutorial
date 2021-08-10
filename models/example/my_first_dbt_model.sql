@@ -5,7 +5,7 @@
     This will override configurations stated in dbt_project.yml
 
     Try changing "table" to "view" below
-*/
+
 
 {{ config(materialized='table') }}
 
@@ -19,9 +19,18 @@ with source_data as (
 
 select *
 from source_data
+*/
 
 /*
     Uncomment the line below to remove records with null `id` values
 */
 
--- where id is not null
+with player as (
+
+    select
+    last_name
+    from `test-cdp-322216`.google_sheets_sipe.nba_players
+    where first_name='Jimmy'
+)
+
+select * from player
